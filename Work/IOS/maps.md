@@ -20,6 +20,18 @@
 
 # CoreLocation框架如何引入
 
+# 接入百度地图
+  + iOS定位SDK返回纬度默认为国测局坐标系BMKLocationCoordinateTypeGCJ02，iOS地图SDK默认全局坐标系为百度坐标系BMKLocationCoordinateTypeBMK09LL
+  + startUpdatingLocation 可以改变当前定位蓝点，使用单次定位无法更改
+  + centerCoordinate 在mapview初始化时赋值，如果使用setCenterCoordinate，则需要延时几秒钟后才生效
+  + 百度逆地理编码收费 https://lbsyun.baidu.com/apiconsole/auth/privilege
+  + 7 - 鉴权失败导致无法返回定位、地址等信息 需要在sdk初始化时调用之前设置正确的 AK
+    [[BMKLocationAuth sharedInstance] checkPermisionWithKey:@"api_key" authDelegate:nil];
+  + 百度地图打开我的定位(showUserLocation) 不准确，需要手动开启定位服务后才可以定位到当前位置
+  + MKMapView 在国内使用的是 高德地图。所以当你身在国内时，如果不是通过特殊手段成为国外的 IP，那么是无法反地理编码国外的坐标的。
+    一般会报如下错误：
+    Geocode error: Error Domain=GEOErrorDomain Code=-8 "(null)"
+
 # 相关API:
 + CLLocationManager
     + 坑点
