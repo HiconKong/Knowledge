@@ -31,7 +31,7 @@
 
 
 
-# 易微联现有push类型统计
+# 现有push类型统计
 + shareResult:无后续动作
 + cancelShareNotify :无后续动作
 + updateShareNotify:无后续动作
