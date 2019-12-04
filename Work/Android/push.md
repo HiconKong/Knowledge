@@ -3,7 +3,7 @@
     dealWithNotificationMessage:通知消息回调,方法内部创建通知渠道
     dealWithCustomMessage:自定义消息回调
     getNotification:自定义通知栏样式
-    各大厂商push key:
+    各大厂商push key:(标题内容不能为空)
                     - vivo:vivo_payload
                     - 华为:extras
                     - 小米:key_message
